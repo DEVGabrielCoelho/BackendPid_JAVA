@@ -1,6 +1,6 @@
-package br.com.api.atividade.pid.DAO;
+package br.com.api.atividade.pid.dao;
 
-import br.com.api.atividade.pid.Entity.TbHistServ;
+import br.com.api.atividade.pid.entity.TbHistServ;
 
 public class TbHistServDao extends GenericDAO<TbHistServ, Integer> {
 

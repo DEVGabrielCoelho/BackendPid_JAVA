@@ -1,4 +1,4 @@
-package br.com.api.atividade.pid.Model;
+package br.com.api.atividade.pid.model;
 
 import java.util.Date;
 
@@ -8,15 +8,15 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(value = "PID - Histórico de Serviços", description = "API para realizar registro de serviços prestados na empresa.")
 public class HistServicoModel {
 
-	@ApiModelProperty(value = "Id do Histórico de Serviços", name = "Id", dataType = "Integer")
+	@ApiModelProperty(value = "Id do Histórico de Serviços", name = "Id")
 	private Integer id;
-	@ApiModelProperty(value = "CPF do Prestador", name = "CPF", dataType = "Long", required = true)
+	@ApiModelProperty(value = "CPF do Prestador", name = "CPF", required = true)
 	private Long prestador;
-	@ApiModelProperty(value = "Código do Serviço", name = "Código", dataType = "Integer", required = true)
+	@ApiModelProperty(value = "Código do Serviço", name = "Código", required = true)
 	private Integer servico;
-	@ApiModelProperty(value = "Data do serviço prestado no formato 00/00/0000", name = "Data", dataType = "Date", required = true)
+	@ApiModelProperty(value = "Data do serviço prestado no formato 00/00/0000", name = "Data", required = true)
 	private Date serviceData;
-	@ApiModelProperty(value = "Valor do Serviço prestado", name = "Valor", dataType = "String", required = true)
+	@ApiModelProperty(value = "Valor do Serviço prestado", name = "Valor", required = true)
 	private String valor;
 
 	public Integer getId() {

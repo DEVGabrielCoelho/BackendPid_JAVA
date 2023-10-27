@@ -1,4 +1,4 @@
-package br.com.api.atividade.pid.Model;
+package br.com.api.atividade.pid.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,17 +6,17 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(value = "PID - Serviços", description = "API para realizar registro de serviços")
 public class ServicoModel {
 
-	@ApiModelProperty(value = "Id de Serviços", name = "Id", dataType = "Integer")
+	@ApiModelProperty(value = "Id de Serviços", name = "Id")
 	private Integer id;
-	@ApiModelProperty(value = "Nome do Serviço", name = "Serviço", dataType = "String", required = true)
+	@ApiModelProperty(value = "Nome do Serviço", name = "Serviço", required = true)
 	private String servico;
-	@ApiModelProperty(value = "Tipo de Jornada", name = "Jornada", dataType = "String", required = true)
+	@ApiModelProperty(value = "Tipo de Jornada", name = "Jornada", required = true)
 	private String jornada;
-	@ApiModelProperty(value = "Descrição do Serviço", name = "Descrição", dataType = "String", required = true)
+	@ApiModelProperty(value = "Descrição do Serviço", name = "Descrição", required = true)
 	private String descricao;
-	@ApiModelProperty(value = "Custo do Serviço", name = "Custo", dataType = "String", required = true)
+	@ApiModelProperty(value = "Custo do Serviço", name = "Custo", required = true)
 	private String custo;
-	@ApiModelProperty(value = "Modelo do Serviço", name = "Modelo", dataType = "String", required = true)
+	@ApiModelProperty(value = "Modelo do Serviço", name = "Modelo", required = true)
 	private String modelo;
 
 	public Integer getId() {

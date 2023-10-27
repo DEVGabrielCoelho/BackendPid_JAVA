@@ -1,5 +1,6 @@
-package br.com.api.atividade.pid.Entity;
+package br.com.api.atividade.pid.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -11,7 +12,7 @@ public class TbPessoa {
 	@Id
 	private Long cpf;
 	private String nome;
-	private Date nascimento;
+	private LocalDate nascimento;
 	private String endereco;
 	private Integer cidade;
 	private String telefone;
@@ -33,11 +34,11 @@ public class TbPessoa {
 		this.nome = nome;
 	}
 
-	public Date getNascimento() {
+	public LocalDate getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(Date nascimento) {
+	public void setNascimento(LocalDate nascimento) {
 		this.nascimento = nascimento;
 	}
 
@@ -79,7 +80,7 @@ public class TbPessoa {
 				+ ", cidade=" + cidade + ", telefone=" + telefone + ", email=" + email + "]";
 	}
 
-	public TbPessoa(Long cpf, String nome, Date nascimento, String endereco, Integer cidade, String telefone,
+	public TbPessoa(Long cpf, String nome, LocalDate nascimento, String endereco, Integer cidade, String telefone,
 			String email) {
 		super();
 		this.cpf = cpf;

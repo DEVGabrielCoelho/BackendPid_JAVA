@@ -1,4 +1,4 @@
-package br.com.api.atividade.pid.Model;
+package br.com.api.atividade.pid.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,15 +6,15 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(value = "PID - Produto", description = "API para realizar registro de produto")
 public class ProdutoModel {
 
-	@ApiModelProperty(value = "Codigo do Produto", name = "Codigo", dataType = "Integer")
+	@ApiModelProperty(value = "Codigo do Produto", name = "Codigo")
 	private Integer codigo;
-	@ApiModelProperty(value = "Nome do Produto", name = "Nome", dataType = "String", required = true)
+	@ApiModelProperty(value = "Nome do Produto", name = "Nome", required = true)
 	private String nome;
-	@ApiModelProperty(value = "Metrica do Produto", name = "Métrica", dataType = "String", required = true)
+	@ApiModelProperty(value = "Metrica do Produto", name = "Métrica", required = true)
 	private String metrica;
-	@ApiModelProperty(value = "Descrição do Produto", name = "Descrição", dataType = "String", required = true)
+	@ApiModelProperty(value = "Descrição do Produto", name = "Descrição", required = true)
 	private String descricao;
-	@ApiModelProperty(value = "Categoria do Produto", name = "Categoria", dataType = "Integer", required = true)
+	@ApiModelProperty(value = "Categoria do Produto", name = "Categoria", required = true)
 	private Integer categoria;
 
 	public Integer getCodigo() {

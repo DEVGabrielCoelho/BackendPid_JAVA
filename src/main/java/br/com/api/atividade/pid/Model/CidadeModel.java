@@ -1,4 +1,4 @@
-package br.com.api.atividade.pid.Model;
+package br.com.api.atividade.pid.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,10 +6,10 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(value = "PID - Cidade", description = "API para realizar cadastro de cidade")
 public class CidadeModel {
 
-	@ApiModelProperty(value = "Codigo da Cidade", name = "Codigo", dataType = "Integer", required = true)
+	@ApiModelProperty(value = "Codigo da Cidade", name = "Codigo", required = true)
 	private Integer codigo;
 
-	@ApiModelProperty(value = "Nome da Cidade", name = "Cidade", dataType = "String", required = true)
+	@ApiModelProperty(value = "Nome da Cidade", name = "Cidade", required = true)
 	private String cidade;
 
 	public Integer getCodigo() {

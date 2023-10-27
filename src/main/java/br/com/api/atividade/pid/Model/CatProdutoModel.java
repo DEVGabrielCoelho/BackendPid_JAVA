@@ -1,4 +1,4 @@
-package br.com.api.atividade.pid.Model;
+package br.com.api.atividade.pid.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,7 +6,6 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(value = "PID - Categoria de Produtos", description = "API para realizar cadastro de categorias de produtos")
 public class CatProdutoModel {
 
-	
 	private Integer id;
 
 	private String categoria;

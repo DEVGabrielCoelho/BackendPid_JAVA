@@ -1,6 +1,11 @@
-package br.com.api.atividade.pid.DAO;
+package br.com.api.atividade.pid.dao;
 
-import br.com.api.atividade.pid.Entity.TbCidade;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import br.com.api.atividade.pid.entity.TbCidade;
+import br.com.api.atividade.pid.utilProvider.EntityManagerProvider;
 
 public class TbCidadeDao extends GenericDAO<TbCidade, Integer> {
 
@@ -9,6 +14,51 @@ public class TbCidadeDao extends GenericDAO<TbCidade, Integer> {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
+	public TbCidade findByCidade(String cidade) {
+
+		TbCidade tbCategoriaProduto = null;
+
+		EntityManager em = EntityManagerProvider.getInstance().createManager();
+
+		try {
+
+			TypedQuery<TbCidade> query = em.createQuery("from TbCidade where cidade = :cidade", TbCidade.class);
+
+			query.setParameter("cidade", cidade);
+
+			tbCategoriaProduto = query.getSingleResult();
+
+			return tbCategoriaProduto;
+
+		} catch (Exception e) {
+			e.getMessage();
+			return null;
+		} finally {
+			em.close();
+		}
+	}
+
+	public Boolean deleteById(Integer codigo) {
+
+		EntityManager em = EntityManagerProvider.getInstance().createManager();
+		String HQL = "DELETE from TbCidade where codigo = :codigo";
+		Query query = em.createNativeQuery(HQL, TbCidade.class);
+		query.setParameter("codigo", codigo);
+
+		try {
+
+			em.getTransaction().begin();
+			query.executeUpdate();
+			em.getTransaction().commit();
+
+			return true;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			em.close();
+		}
+	}
+
 }

@@ -1,4 +1,4 @@
-package br.com.api.atividade.pid.Entity;
+package br.com.api.atividade.pid.entity;
 
 import java.util.Date;
 

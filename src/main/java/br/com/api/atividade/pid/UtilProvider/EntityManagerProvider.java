@@ -1,4 +1,4 @@
-package br.com.api.atividade.pid.UtilProvider;
+package br.com.api.atividade.pid.utilProvider;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

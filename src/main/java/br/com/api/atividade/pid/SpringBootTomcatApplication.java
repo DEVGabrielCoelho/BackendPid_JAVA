@@ -6,6 +6,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-public class SpringBootTomcatApplication extends SpringBootServletInitializer{
+public class SpringBootTomcatApplication extends SpringBootServletInitializer {
 
 }

@@ -1,6 +1,9 @@
-package br.com.api.atividade.pid.Model;
+package br.com.api.atividade.pid.model;
 
+import java.time.LocalDate;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -8,19 +11,20 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(value = "PID - Pessoas", description = "API para realizar cadastro de pessoas")
 public class PessoaModel {
 
-	@ApiModelProperty(value = "CPF do Prestador", name = "CPF", dataType = "Long", required = true)
+	@ApiModelProperty(value = "CPF do Prestador", name = "CPF", required = true)
 	private Long cpf;
-	@ApiModelProperty(value = "Nome da pessoa", name = "Nome", dataType = "String", required = true)
+	@ApiModelProperty(value = "Nome da pessoa", name = "Nome", required = true)
 	private String nome;
-	@ApiModelProperty(value = "Data de nascimento (00/00/0000)", name = "Data Nascimento", dataType = "Date", required = true)
-	private Date nascimento;
-	@ApiModelProperty(value = "Endereço da moradia", name = "Endereço", dataType = "String", required = true)
+	@ApiModelProperty(value = "Data de nascimento (00/00/0000)", name = "Data Nascimento", required = true)
+	@JsonFormat(pattern = "dd-mm-yyyy")
+	private LocalDate nascimento;
+	@ApiModelProperty(value = "Endereço da moradia", name = "Endereço", required = true)
 	private String endereco;
-	@ApiModelProperty(value = "Cidade onde Reside", name = "Cidade", dataType = "String", required = true)
+	@ApiModelProperty(value = "Cidade onde Reside", name = "Cidade", required = true)
 	private Integer cidade;
-	@ApiModelProperty(value = "Telefone para Contato", name = "Telefone", dataType = "String")
+	@ApiModelProperty(value = "Telefone para Contato", name = "Telefone")
 	private String telefone;
-	@ApiModelProperty(value = "E-mail para contato", name = "E-mail", dataType = "String", required = true)
+	@ApiModelProperty(value = "E-mail para contato", name = "E-mail", required = true)
 	private String email;
 
 	public Long getCpf() {
@@ -39,11 +43,11 @@ public class PessoaModel {
 		this.nome = nome;
 	}
 
-	public Date getNascimento() {
+	public LocalDate getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(Date nascimento) {
+	public void setNascimento(LocalDate nascimento) {
 		this.nascimento = nascimento;
 	}
 
@@ -85,7 +89,7 @@ public class PessoaModel {
 				+ ", cidade=" + cidade + ", telefone=" + telefone + ", email=" + email + "]";
 	}
 
-	public PessoaModel(Long cpf, String nome, Date nascimento, String endereco, Integer cidade, String telefone,
+	public PessoaModel(Long cpf, String nome, LocalDate nascimento, String endereco, Integer cidade, String telefone,
 			String email) {
 		super();
 		this.cpf = cpf;

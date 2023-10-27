@@ -16,21 +16,14 @@ public class SpringFoxConfig {
 	String version = pkg.getImplementationVersion();
 
 	@Bean
-    public Docket api() { 
-        return new Docket(DocumentationType.SWAGGER_2)  
-          .select()  
-          .apis(RequestHandlerSelectors.any())              
-          .paths(PathSelectors.any())
-          .build()
-          .apiInfo(apiInfo());                                           
-    }
-	
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any())
+				.paths(PathSelectors.any()).build().apiInfo(apiInfo());
+	}
+
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder()
-				.title("PID - Project")
-				.description("API REST do projeto Interdiciplinar")
-				.version(version)
-				.build();
+		return new ApiInfoBuilder().title("PID - Project").description("API REST do projeto Interdiciplinar")
+				.version(version).build();
 	}
 
 }

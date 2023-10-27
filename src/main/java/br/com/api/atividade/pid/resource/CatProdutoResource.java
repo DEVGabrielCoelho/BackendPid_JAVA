@@ -1,11 +1,10 @@
-package br.com.api.atividade.pid.Resource;
+package br.com.api.atividade.pid.resource;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,21 +14,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.api.atividade.pid.DAO.TbCategoriaProdutoDao;
-import br.com.api.atividade.pid.Entity.TbCategoriaProduto;
-import br.com.api.atividade.pid.Model.CatProdutoModel;
-import br.com.api.atividade.pid.ResponseModel.GeneralResponseModel;
+import br.com.api.atividade.pid.dao.TbCategoriaProdutoDao;
+import br.com.api.atividade.pid.entity.TbCategoriaProduto;
+import br.com.api.atividade.pid.model.CatProdutoModel;
+import br.com.api.atividade.pid.response.model.GeneralResponseModel;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 @RestController
-@RequestMapping(value = "apiPid")
-@Api(tags = "APIs Projeto PID")
-public class PidResource {
+@RequestMapping(value = "categoria-produto/v001")
+@Api(tags = "Categoria Produto", description = "APIs Projeto PID")
+public class CatProdutoResource {
 
-	@PostMapping(value = "categoria-produto/v001")
-	@ApiOperation("API de cadastro de categoria de produtos")
-	public ResponseEntity<GeneralResponseModel> postCursoExtra(@RequestBody List<CatProdutoModel> catProdutoModels) {
+	@PostMapping
+	@ApiResponse(description = "API de cadastro de categoria de produtos")
+	public ResponseEntity<GeneralResponseModel> postCatProduto(@RequestBody List<CatProdutoModel> catProdutoModels) {
 
 		GeneralResponseModel generalResponseModel = new GeneralResponseModel();
 		TbCategoriaProdutoDao categoriaProdutoDao = new TbCategoriaProdutoDao();
@@ -71,9 +70,9 @@ public class PidResource {
 
 	}
 
-	@PutMapping(value = "categoria-produto/v001")
-	@ApiOperation("API de cadastro de categoria de produtos")
-	public ResponseEntity<GeneralResponseModel> putCursoExtra(@RequestBody List<CatProdutoModel> catProdutoModels) {
+	@PutMapping
+	@ApiResponse(description = "API de cadastro de categoria de produtos")
+	public ResponseEntity<GeneralResponseModel> putCatProduto(@RequestBody List<CatProdutoModel> catProdutoModels) {
 
 		GeneralResponseModel generalResponseModel = new GeneralResponseModel();
 		TbCategoriaProdutoDao categoriaProdutoDao = new TbCategoriaProdutoDao();
@@ -108,9 +107,9 @@ public class PidResource {
 
 	}
 
-	@DeleteMapping(value = "categoria-produto/v001/{id}")
-	@ApiOperation("API de cadastro de categoria de produtos")
-	public ResponseEntity<GeneralResponseModel> deleteCursoExtra(@PathVariable Integer id) {
+	@DeleteMapping(value = "{id}")
+	@ApiResponse(description = "API de cadastro de categoria de produtos")
+	public ResponseEntity<GeneralResponseModel> deleteCatProduto(@PathVariable Integer id) {
 
 		GeneralResponseModel generalResponseModel = new GeneralResponseModel();
 		TbCategoriaProdutoDao categoriaProdutoDao = new TbCategoriaProdutoDao();
@@ -137,9 +136,9 @@ public class PidResource {
 
 	}
 
-	@GetMapping(value = "categoria-produto/v001")
-	@ApiOperation("API de cadastro de categoria de produtos")
-	public ResponseEntity<GeneralResponseModel> getCursoExtra() {
+	@GetMapping
+	@ApiResponse(description = "API de cadastro de categoria de produtos")
+	public ResponseEntity<GeneralResponseModel> getCatProduto() {
 
 		GeneralResponseModel generalResponseModel = new GeneralResponseModel();
 		TbCategoriaProdutoDao categoriaProdutoDao = new TbCategoriaProdutoDao();

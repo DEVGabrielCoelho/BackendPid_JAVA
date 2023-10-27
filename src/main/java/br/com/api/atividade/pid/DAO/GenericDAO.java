@@ -1,4 +1,4 @@
-package br.com.api.atividade.pid.DAO;
+package br.com.api.atividade.pid.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,7 +8,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.validation.Valid;
 
-import br.com.api.atividade.pid.UtilProvider.EntityManagerProvider;
+import br.com.api.atividade.pid.utilProvider.EntityManagerProvider;
 
 public abstract class GenericDAO<T, I extends Serializable> {
 

@@ -1,4 +1,4 @@
-package br.com.api.atividade.pid.ResponseModel;
+package br.com.api.atividade.pid.response.model;
 
 import java.util.Date;
 
