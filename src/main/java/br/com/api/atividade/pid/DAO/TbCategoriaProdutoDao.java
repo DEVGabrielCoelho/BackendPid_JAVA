@@ -1,11 +1,10 @@
 package br.com.api.atividade.pid.dao;
 
+import br.com.api.atividade.pid.entity.TbCategoriaProduto;
+import br.com.api.atividade.pid.utilProvider.EntityManagerProvider;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-
-import br.com.api.atividade.pid.entity.TbCategoriaProduto;
-import br.com.api.atividade.pid.utilProvider.EntityManagerProvider;
 
 public class TbCategoriaProdutoDao extends GenericDAO<TbCategoriaProduto, Integer> {
 

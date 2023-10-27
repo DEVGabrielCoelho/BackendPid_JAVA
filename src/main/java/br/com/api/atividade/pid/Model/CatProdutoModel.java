@@ -10,7 +10,7 @@ public class CatProdutoModel {
 
 	private String categoria;
 
-	@ApiModelProperty(value = "ID da Categoria do Produto", name = "Id", position = 1)
+	@ApiModelProperty(value = "ID da Categoria do Produto", name = "Id")
 	public Integer getId() {
 		return id;
 	}

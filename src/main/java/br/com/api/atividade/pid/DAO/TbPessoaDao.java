@@ -1,21 +1,19 @@
 package br.com.api.atividade.pid.dao;
 
+import br.com.api.atividade.pid.entity.TbPessoa;
+import br.com.api.atividade.pid.utilProvider.EntityManagerProvider;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
-import br.com.api.atividade.pid.entity.TbPessoa;
-import br.com.api.atividade.pid.utilProvider.EntityManagerProvider;
+public class TbPessoaDao extends GenericDAO<TbPessoa, Long> {
 
-public class TbPessoaDao extends GenericDAO<TbPessoa, Long>{
-
-  
 	public TbPessoaDao() {
 		super(TbPessoa.class);
 		// TODO Auto-generated constructor stub
 	}
 
-  public TbPessoa findByPessoa(Long cpf) {
+	public TbPessoa findByPessoa(Long cpf) {
 
 		TbPessoa tbPessoa = null;
 
@@ -23,8 +21,7 @@ public class TbPessoaDao extends GenericDAO<TbPessoa, Long>{
 
 		try {
 
-			TypedQuery<TbPessoa> query = em
-					.createQuery("from TbPessoa where cpf = :cpf", TbPessoa.class);
+			TypedQuery<TbPessoa> query = em.createQuery("from TbPessoa where cpf = :cpf", TbPessoa.class);
 
 			query.setParameter("cpf", cpf);
 

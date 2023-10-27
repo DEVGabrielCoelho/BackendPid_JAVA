@@ -12,6 +12,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
 public class SpringFoxConfig {
+
 	Package pkg = getClass().getPackage();
 	String version = pkg.getImplementationVersion();
 
@@ -25,5 +26,4 @@ public class SpringFoxConfig {
 		return new ApiInfoBuilder().title("PID - Project").description("API REST do projeto Interdiciplinar")
 				.version(version).build();
 	}
-
 }
